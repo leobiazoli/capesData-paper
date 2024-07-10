@@ -16,12 +16,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install pandoc
-      run: sudo apt-get install -y pandoc
+    - name: Install pandoc and pandoc-citeproc
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc pandoc-citeproc
 
     - name: Install LaTeX
       run: |
-        sudo apt-get update
         sudo apt-get install -y --no-install-recommends \
           texlive-latex-base \
           texlive-fonts-recommended \
@@ -37,7 +38,7 @@ jobs:
     - name: Convert Markdown to PDF
       run: |
         mkdir -p output
-        pandoc capesData-paper.md -o output/document.pdf --bibliography=paper.bib
+        pandoc capesData-paper.md -o output/document.pdf --bibliography=paper.bib --csl=chicago-author-date.csl --filter pandoc-citeproc
 
     - name: Upload PDF
       uses: actions/upload-artifact@v2
