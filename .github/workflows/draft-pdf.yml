@@ -2,7 +2,7 @@ name: Draft PDF
 on: 
   push: 
     paths:
-      - capesData-paper/capesData-paper.Rmd
+      - capesData-paper/capesData-paper.md
       - capesData-paper/paper.bib
       - .github/workflows/draft-pdf.yml
 
