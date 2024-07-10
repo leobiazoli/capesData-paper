@@ -1,0 +1,40 @@
+name: Convert Markdown to PDF
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install pandoc
+      run: sudo apt-get install -y pandoc
+
+    - name: Install LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          texlive-latex-base \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-latex-extra \
+          texlive-xetex
+
+    - name: Convert Markdown to PDF
+      run: |
+        pandoc capesData-paper/capesData-paper.md -o output/document.pdf
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: document-pdf
+        path: output/document.pdf
