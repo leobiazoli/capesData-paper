@@ -36,10 +36,6 @@ output: html_document
 bibliography: paper.bib
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Summary
 
 `capesData` is an R package [@rbase] that provides an interface for accessing data on scholarships for international mobility programs funded by the Brazilian government through CAPES (Coordenação de Aperfeiçoamento de Pessoal de Nível Superior). The package includes information such as the type of scholarship program, the start and end dates of the scholarship, the home institution, the study institution, the country of study, the program name, and other variables related to the financial aid received by the scholars. The package provides information on scholars from the period of 2010 to 2019, containing two datasets. The first dataset contains only 14 variables and 146,036 observations, while the second dataset has 51 variables and 146,036 observations. The package automates common data reading and organization steps and allows researchers to easily and transparently track the origin of the underlying data sources. It is designed to enable users to easily extend the package's features and contribute to shared data processing. All the package code is archived on GitHub.
