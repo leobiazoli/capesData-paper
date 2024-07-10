@@ -1,5 +1,10 @@
 name: Draft PDF
-on: [push]
+on: 
+  push: 
+    paths:
+      - capesData-paper/capesData-paper.Rmd
+      - capesData-paper/paper.bib
+      - .github/workflows/draft-pdf.yml
 
 jobs:
   paper:
