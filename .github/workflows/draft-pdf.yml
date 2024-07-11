@@ -1,4 +1,4 @@
-name: Generate PDF
+name: Generate PDF with Open Journals PDF Generator
 
 on:
   push:
@@ -9,22 +9,36 @@ on:
       - main
 
 jobs:
-  build:
+  paper:
     runs-on: ubuntu-latest
-    
+    name: Paper Draft
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    
-    - name: Generate PDF
-      uses: openjournals/openjournals-draft-action@master
-      with:
-          journal: joss
-          markdown-file: 'capesData-paper/capesData-paper.md' 
-          output-file: 'output/document.pdf'
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Upload PDF
-      uses: actions/upload-artifact@v2
-      with:
-        name: document-pdf
-        path: output/document.pdf
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-latex-extra \
+            texlive-xetex \
+            texlive-luatex \
+            texlive-science \
+            texlive-lang-portuguese \
+            latexmk \
+            lmodern
+
+      - name: Build draft PDF
+        uses: openjournals/openjournals-draft-action@master
+        with:
+          journal: joss
+          paper-path: capesData-paper.md
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: paper
+          path: capesData-paper.pdf
