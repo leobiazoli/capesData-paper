@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
 
     - name: Install pandoc and pandoc-citeproc
       run: |
@@ -41,7 +41,7 @@ jobs:
         pandoc capesData-paper.md -o output/document.pdf --bibliography=paper.bib 
 
     - name: Upload PDF
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: document-pdf
         path: output/document.pdf
