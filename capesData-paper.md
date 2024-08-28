@@ -48,7 +48,7 @@ An alternative to minimize errors and work with reliable databases is to use gov
 
 Sometimes gathered from multiple databases, for example, separated by year, this data comes in various formats and with different names for the same variables, requiring users to verify and standardize the data before it can be combined or processed for analysis. This creates the possibility of errors through programming mistakes, changes in variable names, or unexpected alterations in a data source. This can lead to misrepresentation of the data in ways that are difficult to identify, such as treating the same variable as two different variables.
 
-Due to these issues, it is important to develop robust tools that provide clean, verified, and standardized data from multiple sources in a transparent manner. The `capesData` package provides easy access to clean data using a single-argument function, ready to analyze the data of Brazilian researchers in government-funded scholarship programs for international academic mobility, and in a structure that is easy to track from raw data to the final set of standardized data. Additional arguments for this function allow users, among other options, to easily manipulate and visualize the data directly in R with two datasets: one complete set of raw data and another with summarized variables.
+Due to these issues, it is important to develop robust tools that provide clean, verified, and standardized data from multiple sources in a transparent manner. The `capesData` package provides easy access to clean data, ready to analyze the data of Brazilian researchers in government-funded scholarship programs for international academic mobility, and in a structure that is easy to track from raw data to the final set of standardized data. Additional arguments for this package allow users, among other options, to easily manipulate and visualize the data directly in R with two datasets: one complete set of raw data and another with summarized variables.
 
 The `capesData` package relies heavily on popular packages that many researchers are familiar with (such as `dplyr` [@dplyr], `tidyr` [@tidyr], and others from the `tidyverse` [@tidyverse]), and therefore, it can be easily adopted by researchers working in R. Currently, `capesData` provides data collected by CAPES/Brazil for Brazilian researchers with international mobility scholarships from 2010 to 2019. The `capesData` package was developed to facilitate access, manipulation, and analysis of data from CAPES database. CAPES is a key Brazilian government agency responsible for the evaluation and support of higher education programs. The dataset contains valuable information for researchers, policymakers, and educational institutions.
 
@@ -62,9 +62,9 @@ The CAPES is a central Brazilian government agency responsible for overseeing an
 
 # Future Directions
 
-The field of educational data analysis is rapidly evolving, with increasing emphasis on automation, integration, and accessibility. Future developments in this field are likely to focus on:
+Educational data analysis is constantly evolving, with increasing trends toward automation, integration, and accessibility. In the future, the field is likely to progress in the following directions:
 
--   **Enhanced Data Integration:** Improved integration with other educational and research databases to provide a more comprehensive view of educational outcomes.
+-   **Data Integration:** Improved integration with other educational and research databases to provide a more comprehensive view of educational outcomes.
 
 -   **Advanced Analytics:** Incorporation of advanced analytical techniques, including machine learning and artificial intelligence, to uncover deeper insights from educational data.
 
