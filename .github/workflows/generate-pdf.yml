@@ -38,7 +38,7 @@ jobs:
     - name: Convert Markdown to PDF
       run: |
         mkdir -p output
-        pandoc capesData-paper.md -o output/document.pdf --bibliography=paper.bib 
+        pandoc paper.md -o output/document.pdf --bibliography=paper.bib 
 
     - name: Upload PDF
       uses: actions/upload-artifact@v2
