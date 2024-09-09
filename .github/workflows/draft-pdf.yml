@@ -35,7 +35,7 @@ jobs:
         uses: openjournals/openjournals-draft-action@master
         with:
           journal: joss
-          paper-path: capesData-paper.md
+          paper-path: paper.md
 
       - name: Upload PDF
         uses: actions/upload-artifact@v3
